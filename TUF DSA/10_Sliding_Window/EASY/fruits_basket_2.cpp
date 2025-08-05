@@ -32,10 +32,11 @@ int main(){
     cin >> n;
     vector<int> baskets(n);
     vector<int> fruits(n);
-
+    cout << "enter fruits : ";
     for(int i = 0 ; i < n ; i++){
         cin >> fruits[i];
     }
+    cout << "enter baskets : ";
     for(int i = 0 ; i < n ; i++){
         cin >> baskets[i];
     }
