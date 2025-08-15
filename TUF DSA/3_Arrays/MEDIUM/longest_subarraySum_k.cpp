@@ -7,7 +7,7 @@ using namespace std;
 
 class Two_Sum{
 public:
-    int longestSubarray(vector<int>& arr, int tar){
+    int longestSubarray(vector<int>& arr, int tar){           // we can use the two pointer approach but in case of +ves only.
         int n = arr.size();
         unordered_map<int,int> preSumMpp;
         int maxLen = 0;
