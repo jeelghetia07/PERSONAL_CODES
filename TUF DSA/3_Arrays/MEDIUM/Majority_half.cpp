@@ -9,6 +9,29 @@ class Majority{
 public:
     int majorityElement(vector<int>& arr){
         int n = arr.size();
+        int cnt = 0, ele;
+        for(int i = 0 ; i < n ; i++){         // Moore's Algorrithm
+            if(cnt == 0){
+                cnt = 1;
+                ele = arr[i];
+            }
+            else{
+                if(arr[i] == ele) cnt++;
+                else cnt--;
+            }
+        }
+        int cnt1 = 0;
+        for(int i = 0 ; i < n ; i++){
+            if(arr[i] == ele){
+                cnt1++;
+            }
+        }
+        if(cnt1 > (n/2)){
+            return ele;
+        }
+        else{
+            return -1;
+        }
 
         
 
