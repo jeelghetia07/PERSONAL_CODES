@@ -33,6 +33,6 @@ int main(){
 
     Height h;
     int height = h.maxHeight(root);
-    cout << "The Height of the Tree is : " << height << endl;
+    cout << "The height of the tree is : " << height << endl;
     return 0;
 }
