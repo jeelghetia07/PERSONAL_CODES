@@ -9,10 +9,10 @@ using namespace std;
 //     if(ind == 0) return (arr[0] == tar);
 //     if(dp[ind][tar] != -1) return dp[ind][tar];
 
-    // bool nontake = dp[ind-1][tar];
+    // bool nontake = f(ind-1, tar, arr, dp);
     // bool take = false;
     // if(tar >= arr[ind]){
-    //     take = dp[ind-1][tar-arr[ind]];
+    //     take = f(ind-1, tar-arr[ind], arr, dp);
     // }
 //     return dp[ind][tar] = take | nontake;
 // }
@@ -31,7 +31,7 @@ using namespace std;
 //     for(int i = 0 ; i < n ; i++) dp[i][0] = true;
 //     dp[0][arr[0]] = true;
 
-//     for(int ind = 0 ; ind < n ; ind++){
+//     for(int ind = 1 ; ind < n ; ind++){
 //         for(int tar = 1 ; tar <= k ; tar++){
 //             bool nontake = dp[ind-1][tar];
 //             bool take = false;
@@ -55,7 +55,7 @@ bool subsetSumk(int n, int k, vector<int> &arr){
     curr[0] = true;
     prev[arr[0]] = true;
 
-    for(int ind = 0 ; ind < n ; ind++){
+    for(int ind = 1 ; ind < n ; ind++){
         for(int tar = 1 ; tar <= k ; tar++){
             bool nontake = prev[tar];
             bool take = false;
