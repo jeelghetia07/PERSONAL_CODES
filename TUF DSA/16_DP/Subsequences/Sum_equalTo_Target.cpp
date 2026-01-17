@@ -26,22 +26,47 @@ using namespace std;
 
                 // TABULATION METHOD....BOTTOM UP APPROACH.
 
+// bool subsetSumk(int n, int k, vector<int> &arr){
+//     vector<vector<bool>> dp(n, vector<bool>(k+1, 0));
+//     for(int i = 0 ; i < n ; i++) dp[i][0] = true;
+//     dp[0][arr[0]] = true;
+
+//     for(int ind = 0 ; ind < n ; ind++){
+//         for(int tar = 1 ; tar <= k ; tar++){
+//             bool nontake = dp[ind-1][tar];
+//             bool take = false;
+//             if(tar >= arr[ind]){
+//                 take = dp[ind-1][tar-arr[ind]];
+//             }
+//             dp[ind][tar] = take | nontake;
+//         }
+//     }
+//     return dp[n-1][k];
+// }
+
+
+
+                // SPACE OPTIMIZED.
+
+
 bool subsetSumk(int n, int k, vector<int> &arr){
-    vector<vector<bool>> dp(n, vector<bool>(k+1, 0));
-    for(int i = 0 ; i < n ; i++) dp[i][0] = true;
-    dp[0][arr[0]] = true;
+    vector<bool> prev(k+1, 0), curr(k+1, 0);
+    prev[0] = true;
+    curr[0] = true;
+    prev[arr[0]] = true;
 
     for(int ind = 0 ; ind < n ; ind++){
         for(int tar = 1 ; tar <= k ; tar++){
-            bool nontake = dp[ind-1][tar];
+            bool nontake = prev[tar];
             bool take = false;
             if(tar >= arr[ind]){
-                take = dp[ind-1][tar-arr[ind]];
+                take = prev[tar-arr[ind]];
             }
-            dp[ind][tar] = take | nontake;
-        }
+            curr[tar] = take | nontake;
+        } 
+        prev = curr;
     }
-    return dp[n-1][k];
+    return prev[k];
 }
 
 int main(){
