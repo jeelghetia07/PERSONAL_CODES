@@ -9,10 +9,10 @@ using namespace std;
 //     if(ind == 0) return (arr[0] == tar);
 //     if(dp[ind][tar] != -1) return dp[ind][tar];
 
-    // bool nontake = f(ind-1, tar, arr, dp);
+    // bool nontake = dp[ind-1][tar];
     // bool take = false;
     // if(tar >= arr[ind]){
-    //     take = f(ind-1, tar-arr[ind], arr, dp);
+    //     take = dp[ind-1][tar-arr[ind]];
     // }
 //     return dp[ind][tar] = take | nontake;
 // }
