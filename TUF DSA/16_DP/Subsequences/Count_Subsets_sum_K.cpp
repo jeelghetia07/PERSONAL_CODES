@@ -1,6 +1,10 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// Problem Statement : Given an array arr of n integers and an integer K, count the number of subsets of the given array that have a sum equal to K.
+
+// constriants....  1 <= nums[i] <= 1000....here 0 is not there....if 0 comes...then there will be increase in subsets.
+
                     // MEMOIZATION USING RECURSION.
 
 // int f(int ind, int tar, vector<int>& arr, vector<vector<int>>& dp){

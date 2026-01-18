@@ -2,6 +2,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// Problem Description: Given an array of n integers, partition the array into two subsets such that the absolute difference between their sums is minimized.
+
 int minimumDifference(vector<int>& nums) {
     int n = nums.size();
     int totSum = 0;
