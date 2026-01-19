@@ -83,7 +83,7 @@ int minimumEle(vector<int>& arr, int tar){
         for(int T = 0 ; T <= tar ; T++){
             int nottake = 0 + prev[T];     // this says...) coins + f(next ele, T);
             int take = 1e9;
-            if(arr[ind] <= T) take = 1 + prev[T-arr[ind]];     // this shows we add 1 (quantity of coin we take rn)....and we remain at the same index to check the same value again.
+            if(arr[ind] <= T) take = 1 + curr[T-arr[ind]];     // this shows we add 1 (quantity of coin we take rn)....and we remain at the same index to check the same value again.
             curr[T] = min(take, nottake);
         }
         prev = curr;
