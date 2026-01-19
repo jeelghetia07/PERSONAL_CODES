@@ -37,27 +37,59 @@ using namespace std;
                 // TABULATION APPROACH.
 
 
+// int minimumEle(vector<int>& arr, int tar){
+//     int n = arr.size();
+//     vector<vector<int>> dp(n, vector<int>(tar+1, -1));
+
+//     for(int T = 0 ; T <= tar ; T++){
+//         if(T % arr[0] == 0) dp[0][T] = T/arr[0];
+//         else{
+//             dp[0][T] = 1e9;
+//         }
+//     }
+
+//     for(int ind = 1 ; ind < n ; ind++){
+//         for(int T = 0 ; T <= tar ; T++){
+//             int nottake = 0 + dp[ind-1][T];     // this says...) coins + f(next ele, T);
+//             int take = 1e9;
+//             if(arr[ind] <= T) take = 1 + dp[ind][T-arr[ind]];     // this shows we add 1 (quantity of coin we take rn)....and we remain at the same index to check the same value again.
+//             dp[ind][T] = min(take, nottake);
+//         }
+//     }
+
+//     int ans = dp[n-1][tar];
+//     if(ans >= 1e9) return -1;
+//     return ans;
+// }
+
+
+
+
+                    // SPACE OPTIMIZED CODE
+
+
 int minimumEle(vector<int>& arr, int tar){
     int n = arr.size();
-    vector<vector<int>> dp(n, vector<int>(tar+1, -1));
+    vector<int> prev(tar+1, 0), curr(tar+1, 0);
 
     for(int T = 0 ; T <= tar ; T++){
-        if(T % arr[0] == 0) dp[0][T] = T/arr[0];
+        if(T % arr[0] == 0) prev[T] = T/arr[0];
         else{
-            dp[0][T] = 1e9;
+            prev[T] = 1e9;
         }
     }
 
     for(int ind = 1 ; ind < n ; ind++){
         for(int T = 0 ; T <= tar ; T++){
-            int nottake = 0 + dp[ind-1][T];     // this says...) coins + f(next ele, T);
+            int nottake = 0 + prev[T];     // this says...) coins + f(next ele, T);
             int take = 1e9;
-            if(arr[ind] <= T) take = 1 + dp[ind][T-arr[ind]];     // this shows we add 1 (quantity of coin we take rn)....and we remain at the same index to check the same value again.
-            dp[ind][T] = min(take, nottake);
+            if(arr[ind] <= T) take = 1 + prev[T-arr[ind]];     // this shows we add 1 (quantity of coin we take rn)....and we remain at the same index to check the same value again.
+            curr[T] = min(take, nottake);
         }
+        prev = curr;
     }
 
-    int ans = dp[n-1][tar];
+    int ans = prev[tar];
     if(ans >= 1e9) return -1;
     return ans;
 }
