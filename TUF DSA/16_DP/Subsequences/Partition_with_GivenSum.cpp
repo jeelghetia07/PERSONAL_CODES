@@ -38,7 +38,8 @@ int FindWays(vector<int>& arr, int n, int k){
             dp[ind][tar] = pick + nonpick;
         }
     }
-    return dp[n-1][k];
+    int ans = dp[n-1][k];
+    return ans;
 }
 
 int countPartitions(int n, int d, vector<int>& arr){
