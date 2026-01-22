@@ -6,6 +6,9 @@ int findNumber(vector<int>& s, vector<int> &greed){
     int m= greed.size();
     int l = 0, r = 0;
 
+    sort(s.begin(), s.end());
+    sort(greed.begin(), greed.end());
+
     while(l < n && r < m){
         if(s[l] >= greed[r]) r= r+1;
         l = l+1;
@@ -14,8 +17,8 @@ int findNumber(vector<int>& s, vector<int> &greed){
 }
 
 int main(){
-    vector<int> s = {1,1,2,2,3,4};
-    vector<int> greed = {1,3,3,4,5};
+    vector<int> s = {1,2,1,2,4,3};
+    vector<int> greed = {3,3,1,5,4};
 
     cout << "The children assigned cookies are : " << findNumber(s, greed);
     return 0;
