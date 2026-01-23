@@ -31,7 +31,7 @@ bool func(vector<int>& bills){
 }
 
 int main(){
-    vector<int> bills = {5,5,5,10,20};      // here we are given N = bills.size() lemonades (here 5 lemonade)...we have to sell them.
+    vector<int> bills = {5,5,5,10,20};      // here we are given N = bills.size() lemonades (here 5 lemonade)...we have to sell them for 5 each.
     if(func(bills) == 1){
         cout << "Yes, Can sell all lemonades.";
     }
