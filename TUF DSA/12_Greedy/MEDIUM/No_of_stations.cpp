@@ -54,3 +54,8 @@ int main(){
     cout << "The min stations required are : " << func(arr,dep);
     return 0;
 }
+
+
+// CourseRegistration :- in the new course available.....when i press enable....the student id..email and name should be freezed just gender should be changable(selected)....
+// Myprofile :- the option for uploading photo i want it....would it be enebled by backend??? how will it be stored in the DB???in the edit .....i want u to freeze the mail id , name , and student id.....becoz it cannot change by a student..... just  phn number and address editable...
+// Timetable :- the week view is not showing all the lectures according to time.....its just showing Data Structures....ig there is a problem in the code...plz change it ....and finally...Library :- i want to see all the branch books rather than only for CS(or that will be done by the backend or DB)???and lastly...i want u to remove the attendance and faculty portion fully....form the whole system
