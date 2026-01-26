@@ -63,7 +63,8 @@ int func(vector<int>& rating){
 }
 
 int main(){
-    vector<int> rating = {0,2,4,3,2,1,1,3,5,6,4,0,0};
+    // vector<int> rating = {0,2,4,3,2,1,1,3,5,6,4,0,0};
+    vector<int> rating = {0,2,4,3,2};
     cout << "The sum is : " << func(rating);
     return 0;
 }
