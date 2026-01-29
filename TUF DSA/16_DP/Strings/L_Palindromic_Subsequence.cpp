@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// Problem Statement: Given a string, Find the longest palindromic subsequence length in given string. A palindrome is a sequence that reads the same backwards as forward. A subsequence is a sequence that can be derived from another sequence by deleting some or no elements without changing the order of the remaining elements.
+
 int LCS(string& s1, string&s2){
     int n = s1.size();
     int m = s2.size();

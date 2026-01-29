@@ -2,6 +2,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//Problem Statement: Given two strings str1 and str2, find the length of their longest common subsequence. A subsequence is a sequence that appears in the same relative order but not necessarily contiguous and a common subsequence of two strings is a subsequence that is common to both strings.
+
 // int func(int ind1, int ind2, string& s1, string& s2, vector<vector<int>>& dp){
 //     if(ind1 < 0 || ind2 < 0){
 //         return 0;
