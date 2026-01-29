@@ -2,6 +2,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//Problem Statement: We are given two strings ‘S1’ and ‘S2’. We need to return their shortest common supersequence. A supersequence is defined as the string which contains both the strings S1 and S2 as subsequences.
+
 string shortestCommonSupersequence(string s1, string s2) {
     int n = s1.size();
     int m = s2.size();

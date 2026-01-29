@@ -2,6 +2,11 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//  Problem Statement: We are given two strings, str1 and str2. We are allowed the following operations:
+/*  1. Delete any number of characters from string str1.
+    2. Insert any number of characters in string str1.
+    Return the minimum number of operations required to convert str1 to str2. */
+
 int LCS(string& s1, string& s2){
     int n = s1.size();
     int m = s2.size();

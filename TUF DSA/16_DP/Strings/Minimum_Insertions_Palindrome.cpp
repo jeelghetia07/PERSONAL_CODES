@@ -2,6 +2,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// Problem Statement: Given a string s, find the minimum number of insertions needed to make it a palindrome. A palindrome is a sequence that reads the same backward as forward. You can insert characters at any position in the string.
+
 int LCS(string& s1, string& s2){
     int n = s1.size();
     int m = s2.size();
