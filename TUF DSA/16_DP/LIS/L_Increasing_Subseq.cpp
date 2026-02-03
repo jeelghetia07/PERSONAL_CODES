@@ -88,18 +88,39 @@ using namespace std;
 
             // OTHER TABULATION APPROACH
 
+// int longestIncrSubseq(vector<int>& arr, int n){
+//     vector<int> dp(n, 1);    // initially the longest incre subseq of a particular ele will be itself...so len = 1;
+//     int maxi = 1;
+//     for(int i = 0 ; i < n ; i++){
+//         for(int prev = 0 ; prev < i ; prev++){
+//             if(arr[prev] < arr[i]){
+//                 dp[i] = max(dp[i], 1 + dp[prev]);
+//             }
+//         }
+//         maxi = max(maxi, dp[i]);
+//     }
+//     return maxi;
+// }
+
+
+
+
+            // USING BINARY SEARCH.....TC = O(nlogn)....SC = O(n).
+
 int longestIncrSubseq(vector<int>& arr, int n){
-    vector<int> dp(n, 1);    // initially the longest incre subseq of a particular ele will be itself...so len = 1;
-    int maxi = 1;
-    for(int i = 0 ; i < n ; i++){
-        for(int prev = 0 ; prev < i ; prev++){
-            if(arr[prev] < arr[i]){
-                dp[i] = max(dp[i], 1 + dp[prev]);
-            }
+    vector<int> temp;
+    temp.push_back(arr[0]);
+
+    for(int i = 1 ; i < n ; i++){
+        if(arr[i] > temp.back()){
+            temp.push_back(arr[i]);
         }
-        maxi = max(maxi, dp[i]);
+        else{
+            int ind = lower_bound(temp.begin(), temp.end(), arr[i]) - temp.begin();
+            temp[ind] = arr[i];
+        }
     }
-    return maxi;
+    return temp.size();
 }
 
 int main(){
