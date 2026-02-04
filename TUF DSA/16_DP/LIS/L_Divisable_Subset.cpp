@@ -11,7 +11,7 @@ vector<int> LongDivisableSubset(vector<int>& arr){
     for(int i = 0 ; i < n ; i++){
         hash[i] = i;      // at start store the index itself.
         for(int prev = 0 ; prev < i ; prev++){
-            if((arr[i] % arr[prev] == 0) && 1 + dp[prev] > dp[i]){
+            if((arr[i] % arr[prev] == 0) && 1 + dp[prev] > dp[i]){      // The condition 1 + dp[prev] > dp[i] prevents shorter or equal chains from overwriting the best chain.
                 dp[i] = max(dp[i], 1 + dp[prev]);
                 hash[i] = prev;
             }
