@@ -13,8 +13,8 @@ using namespace std;
 
 
 // int func(int i, int j, string s1, string s2){
-//     if(i<0) return j+1;
-//     if(j<0) return i+1;
+//     if(i<0) return j+1;      // this shows the number of operations to insert the remaining values in s1 to match with s2.
+//     if(j<0) return i+1;      // this shows the number of operations to delete the remaining values in s1 to match with s2.
 
 //     if(s1[i] == s2[j]) return func(i-1,j-1,s1,s2);
 //     return 1 + min(func(i-1,j,s1,s2), min(func(i,j-1,s1,s2), func(i-1,j-1,s1,s2)));
