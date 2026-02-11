@@ -5,30 +5,27 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class BFSTRAVERSAL{
-public: 
-    vector<int> BFS(int V, vector<int> adj[]){
-        int vis[V] = {0};
-        vis[0] = 1;
-        queue<int> q;
+vector<int> BFS(int V, vector<int> adj[]){
+    int vis[V] = {0};
+    vis[0] = 1;
+    queue<int> q;
 
-        q.push(0);
-        vector<int> bfs;
-        while(!q.empty()){
-            int node = q.front();
-            q.pop();
-            bfs.push_back(node);
+    q.push(0);
+    vector<int> bfs;
+    while(!q.empty()){
+        int node = q.front();
+        q.pop();
+        bfs.push_back(node);
 
-            for(auto it : adj[node]){
-                if(!vis[it]){
-                    vis[it] = 1;
-                    q.push(it);
-                }
+        for(auto it : adj[node]){
+            if(!vis[it]){
+                vis[it] = 1;
+                q.push(it);
             }
         }
-        return bfs;
     }
-};
+    return bfs;
+}
 
 void addEdge(vector<int> adj[], int u, int v){
     adj[u].push_back(v);
@@ -42,10 +39,13 @@ void printans(vector<int> &ans){
 }
 
 int main(){
-    vector<int> adj[6];
+    vector<int> adj[5];
 
     addEdge(adj,0,1);
     addEdge(adj,1,2);
     addEdge(adj,1,3);
     addEdge(adj,0,4);
+
+    vector<int> ans = BFS(5, adj);
+    printans(ans);
 }
