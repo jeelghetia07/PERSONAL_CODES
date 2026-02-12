@@ -1,6 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+// Problem Statement: Given a binary grid of N*M. Find the distance of the nearest 1 in the grid for each cell.
+
 class DISTANCE{
 public:
     vector<vector<int>> nearest(vector<vector<int>> grid){
