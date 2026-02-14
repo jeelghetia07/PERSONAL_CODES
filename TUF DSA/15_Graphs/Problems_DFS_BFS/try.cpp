@@ -1,32 +1,38 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-bool dfs(int node, int parent, vector<int> adj[], int vis[]){
-    vis[node] = 1;
-    for(auto neighbour : adj[node]){
-        if(!vis[neighbour]){
-            if((dfs(neighbour, node, adj, vis) == true)) return true;
-        }
-        else if(neighbour != parent){
-            return true;
+int ladderLength(string beginWord, string endWord, vector<string>& wordList){
+    queue<pair<string, int>> q;
+    q.push({beginWord, 1});
+
+    unordered_set<string> st(wordList.begin(), wordList.end());     
+    st.erase(beginWord);
+
+    while(!q.empty()){
+        string word = q.front().first;
+        int steps = q.front().second;
+        q.pop();
+
+        for(int i = 0 ; i < word.size(); i++){
+            char original = word[i];
+            if(word == endWord) return steps;
+            for(char ch = 'a' ; ch <= 'z' ; ch++){
+                word[i] = ch;
+                if(st.find(word) != st.end()){
+                    st.erase(word);
+                    q.push({word, steps+1});
+                }
+            }
+            word[i] = original;
         }
     }
-    return false;
-}
-
-bool isCycle(int V, vector<int> adj[]){
-    int vis[V] = {0};
-
-    for(int i = 0 ; i < V ; i++){
-        if(!vis[i]){
-            if(dfs(i, -1, adj, vis) == true) return true;
-        }
-    }
-    return false;
+    return 0;
 }
 
 int main(){
-    vector<int> adj[4] = {{}, {2, 3}, {1, 3}, {1, 2}};      
-    cout << isCycle(4, adj);
+    string beginWord = "hit", endWord = "cog";
+    vector<string> wordList = {"hot","dot","dog","lot","log","cog"};
+
+    cout << "The min steps to convert is : " << ladderLength(beginWord, endWord, wordList);
     return 0;
 }
