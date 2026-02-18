@@ -1,6 +1,14 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+/*
+    Given an undirected, weighted graph with V vertices numbered from 0 to V-1 and E edges, represented by 2d array edges[][], where edges[i]=[u, v, w] represents the edge between the nodes u and v having w edge weight.
+    You have to find the shortest distance of all the vertices from the source vertex src, and return an array of integers where the ith element denotes the shortest distance between ith node and source vertex src.
+
+    Note : The Graph is connected and doesn't contain any negative weight edge.
+    It is guaranteed that all the shortest distance will fit in a 32-bit integer.
+*/
+
 vector<int> shortestPath(int n, int m, vector<vector<int>>& edges) {
     vector<vector<pair<int, int>>> adj(n+1);
     
