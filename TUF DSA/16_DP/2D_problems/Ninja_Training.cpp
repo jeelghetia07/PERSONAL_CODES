@@ -79,9 +79,9 @@ int NinjaTraining(int n, vector<vector<int>> &points){      // TABULATION .....T
 
 int main(){
     vector<vector<int>> points = {{2,1,3},
-                                {3,4,6},
-                                {10,1,6},
-                                {8,3,7}};
+                                  {3,4,6},
+                                  {10,1,6},
+                                  {8,3,7}};
     int n = points.size();
     int ans = NinjaTraining(n,points);
     cout << "The ans is : " << ans;
