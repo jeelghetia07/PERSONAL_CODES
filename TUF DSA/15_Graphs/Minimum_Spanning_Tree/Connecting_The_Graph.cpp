@@ -29,7 +29,7 @@ public:
 
         if(ulp_u == ulp_v) return;
 
-        // if both the ultimate parents are diff then we compare teh size and attach the smaller one into the larger one.
+        // if both the ultimate parents are diff then we compare the size and attach the smaller one into the larger one.
 
         if(size[ulp_u] < size[ulp_v]){
             parent[ulp_u] = ulp_v;
