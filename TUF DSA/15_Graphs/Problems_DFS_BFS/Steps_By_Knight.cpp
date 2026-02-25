@@ -42,8 +42,10 @@ int minStepToReachTarget(vector<int>& knight, vector<int>& target, int n){
 }
 
 int main(){
-    int n = 6;
-    vector<int> knightPo = {4, 5},targetPo = {1, 1};
+    // int n = 6;
+    // vector<int> knightPo = {4, 5},targetPo = {1, 1};
+    int n = 3;
+    vector<int> knightPo = {3, 3},targetPo = {1, 1};
 
     int steps = minStepToReachTarget(knightPo, targetPo, n);
     cout << "The min steps to reach dst is : " << steps;
