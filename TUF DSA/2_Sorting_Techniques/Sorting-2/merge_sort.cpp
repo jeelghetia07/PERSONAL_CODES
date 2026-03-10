@@ -5,29 +5,29 @@ using namespace std;
 
 class solution{
 public:
-    vector<int> merge(vector<int>& arr,int low,int mid,int high){
+    void merge(vector<int>& arr,int low,int mid,int high){
         vector<int> temp;
         int left = low , right = mid+1;
         while(left <= mid && right <= high){
             if(arr[left] <= arr[right]){
-                temp.push_back(arr[left]);
-                left++;
+                temp.push_back(arr[left++]);
             }
             else{
-                temp.push_back(arr[right]);
-                right++;
+                temp.push_back(arr[right++]);
             }
         }
         while(left <= mid){
-            temp.push_back(arr[left]);
-            left++;
+            temp.push_back(arr[left++]);
         }
         while(right <= high){
-            temp.push_back(arr[right]);
-            right++;
+            temp.push_back(arr[right++]);
         }
-        for(int i = low ; i < temp.size() ; i++){
-            arr[i] = temp[i-low];
+        // for(int i = low ; i < temp.size() ; i++){
+        //     arr[i] = temp[i-low];
+        // }
+        int index = 0;
+        while(low <= high){
+            arr[low++] = temp[index++];
         }
     }
     void sortArray(vector<int>& arr,int low,int high){
@@ -42,7 +42,7 @@ public:
 };
 
 int main(){
-    vector<int> arr = {3,2,4,1,3};
+    vector<int> arr = {3,2,4,1,5,21,7,0};
     solution s;
     int n = arr.size();
     int low = 0 , high = n-1;
