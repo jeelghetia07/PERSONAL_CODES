@@ -15,21 +15,13 @@ int main(){
             cin >> arr[i];
         }
 
-        sort(arr.begin(), arr.end());
-
-        int curr = 1;
-        int best = 1;
+        int ans = 0;
 
         for(int i = 1 ; i < n ; i++){
-            if(arr[i] == arr[i-1]+1){
-                curr++;
-            }
-            else if(arr[i] != arr[i-1]){
-                curr = 1;
-            }
-            best = max(curr, best);
+            if(arr[i] + arr[i-1] == 7 || arr[i] == arr[i-1]) ans++, i++;
         }
-        cout << best << endl;
+        cout << ans << endl;
     }
+
     return 0;
 }
