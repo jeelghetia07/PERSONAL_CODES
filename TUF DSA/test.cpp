@@ -9,18 +9,21 @@ int main(){
         int n;
         cin >> n;
 
-        vector<int> arr(n);
+        int arr[n];
+
+        bool odd = false, even = false;
 
         for(int i = 0 ; i < n ; i++){
             cin >> arr[i];
+            if(arr[i]%2 == 0) even = true;
+            else odd = true;
         }
 
-        int ans = 0;
+        if(odd and even) sort(arr , arr+n);
 
-        for(int i = 1 ; i < n ; i++){
-            if(arr[i] + arr[i-1] == 7 || arr[i] == arr[i-1]) ans++, i++;
+        for(int i = 0 ; i < n ; i++){
+            cout << arr[i] << endl;
         }
-        cout << ans << endl;
     }
 
     return 0;
