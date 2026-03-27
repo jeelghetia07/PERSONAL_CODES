@@ -11,7 +11,7 @@ int largestRectangleArea(vector<int>& arr) {
         while(!st.empty() && arr[st.top()] >= arr[i]){
             int element = st.top();
             st.pop();
-            int nse = i;        // as we only pop when we find a smaller element than the top....so obv the nse will be the i (which is smaller than top)....
+            int nse = i;        // as we only pop when we find a smaller element than the top....so obv the next smaller element will be the i (which is smaller than top)....
             int pse = st.empty() ? -1 : st.top();
             maxAns = max(maxAns, arr[element] * (nse-pse-1));
         }
