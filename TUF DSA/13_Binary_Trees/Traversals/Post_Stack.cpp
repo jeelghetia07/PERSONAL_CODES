@@ -1,6 +1,4 @@
-#include<iostream>
-#include <vector>
-#include <stack>
+#include<bits/stdc++.h>
 using namespace std;
 
 class TreeNode{
@@ -19,20 +17,23 @@ public:
         vector<int> ans; 
         stack<TreeNode*> st;
         if(root == NULL) return ans;
-        TreeNode* node = root;
-        while(true){
-            if(node != NULL){
-                st.push(node);
-                node = node->right;
+        TreeNode* curr = root;
+        while(curr != NULL && !st.empty()){
+            if(curr != NULL){
+                st.push(curr);
+                curr = curr->left;
             }
             else{
-                if(st.empty()) break;
-                node = st.top();
-                st.pop();
-                ans.push_back(node->val);
-                node = node->left;
+                TreeNode* temp = st.top()->right;
+                if(temp == NULL){
+                    temp = st.top();
+                    st.pop();
+                    ans.push_back(temp);
+                    while(!st.empty() && temp == st.top)
+                }
             }
         }
+        reverse(ans.begin(), ans.end());
         return ans;
     }
 
