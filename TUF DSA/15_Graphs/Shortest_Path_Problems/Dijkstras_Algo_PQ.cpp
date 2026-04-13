@@ -35,13 +35,13 @@ vector<int> dijkstra(int V, vector<vector<int>> &edges, int src) {
             }
         }
     }
-    
     return dist;
 }
 
 int main(){
     int V = 5;
-    vector<vector<int>> edges = {{0, 1, 4}, {0, 2, 8}, {1, 4, 6}, {2, 3, 2}, {3, 4, 10}};
+    // vector<vector<int>> edges = {{0, 1, 4}, {0, 2, 8}, {1, 4, 6}, {2, 3, 2}, {3, 4, 10}};
+    vector<vector<int>> edges = {{0, 1, 9}, {0, 4, 9}, {0, 3, 4}, {1, 2, 4}, {1, 3, 4}, {1, 4, 1},{2, 4, 7},{2, 3, 4},{3, 4, 7}};
     int src = 0;
 
     vector<int> ans = dijkstra(V, edges, src);
