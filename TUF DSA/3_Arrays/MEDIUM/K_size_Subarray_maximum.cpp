@@ -14,17 +14,19 @@ class Solution {
         
         for(int i = 0 ; i < n ; i++){
             
+            // here the if the window size increases, we check it and remove the older ele from the front.
             if(!dq.empty() && dq.front() == i-k){
                 dq.pop_front();
             }
             
+            // if the ele before the new ele is smaller, whats the need of it, so we keep popping it.
             while(!dq.empty() && arr[i] >= arr[dq.back()]){
                 dq.pop_back();
             }
             
-            dq.push_back(i);
+            dq.push_back(i);            // we push the initial ele definitely.
             
-            if(i >= k-1){
+            if(i >= k-1){               // if the index is already greater than k (applied for the 2st window mainly, for the rest, it would be automatically true.);
                 ans.push_back(arr[dq.front()]);
             }
         }
