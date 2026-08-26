@@ -32,7 +32,7 @@ class Solution {
             if(arr[i] < arr[minIdx]) minIdx = i;
         }
         
-        return sum - 2LL*arr[minIdx];
+        return sum - 2LL*arr[minIdx];           // here after making a (+ve) ele / (-ve) ele, it means, we reduced that ele from the sum 2 times.
     }
 };
 

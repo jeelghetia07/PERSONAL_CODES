@@ -5,6 +5,52 @@
 #include <unordered_map>
 using namespace std;
 
+        // simple SWP for the +ve and 0s , it wont work for the -ve numbers.
+
+/*
+
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int func(vector<int>& arr, int k){
+    int n = arr.size();
+    vector<int> pref(n, 0);
+    pref[0] = arr[0];
+
+    for(int i = 1 ; i < n ; i++){
+        pref[i] = pref[i-1] + arr[i];
+    }
+
+    int l = 0, r = 0;
+    int sum = 0;
+    int maxi = INT_MIN;
+
+    while(r < n){
+        sum += arr[r];
+
+        if(sum > k){
+            sum -= arr[l];
+            l++;
+        }
+        if(sum == k)
+            maxi = max(r-l+1, maxi);
+        r++;
+    }
+
+    return maxi;
+}
+
+int main() {
+    vector<int> arr = {1,2,3,1,0,0,0,4,2,3};
+
+    int ans = func(arr, 6);
+    cout << ans;
+
+    return 0;
+}
+*/
+
 class Two_Sum{
 public:
     int longestSubarray(vector<int>& arr, int tar){           // we can use the two pointer approach but in case of +ves only.
