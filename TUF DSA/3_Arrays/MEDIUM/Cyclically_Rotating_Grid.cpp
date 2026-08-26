@@ -49,7 +49,7 @@ public:
         vector<vector<int>> ans(n, vector<int>(m, 0));
 
         while(top < bottom && left < right){
-            vector<int> temp;
+            vector<int> temp;                   // we are taking one entire layer into the temp array, and from that we are rotating the array normally by the reverse logic and then going to the inner layer and doing the same thing again and again.
 
             for(int i = left ; i <= right ; i++){
                 temp.push_back(grid[top][i]);
