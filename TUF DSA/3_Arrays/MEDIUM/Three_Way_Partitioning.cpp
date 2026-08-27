@@ -13,11 +13,13 @@ using namespace std;
     Geeky Challenge: Solve this problem in O(n) time complexity.
 */
 
+
+                // HINT : -  DUTCH NATIONAL FLAG algorithm, observe carefully.
+
 class Solution {
   public:
     void threeWayPartition(vector<int>& arr, int a, int b) {
-        // code here
-        int n = arr.size();             // DUTCH NATIONAL FLAG algorithm
+        int n = arr.size();             
         int low = 0, mid = 0, high = n-1;
         
         while(mid <= high){
