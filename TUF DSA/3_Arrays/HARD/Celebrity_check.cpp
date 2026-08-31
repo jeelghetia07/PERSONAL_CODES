@@ -31,6 +31,30 @@ class Solution {
         
         return cand;
     }
+
+    /*
+        int celebrity(vector<vector<int>>& mat) {
+            int cele = 0;
+            int n = mat.size();
+            int m = mat[0].size();
+            
+            int top = 0, down = n-1;
+            
+            while(top < down){
+                if(mat[top][down] == 1) top++;
+                else down--;
+            }
+                
+            cele = top;
+            
+            for(int i = 0 ; i < n ; i++){
+                if(i == cele) continue;
+                if(mat[cele][i] == 1 || mat[i][cele] == 0) return -1;
+            }
+            
+            return cele;
+        }
+    */
 };
 
 int main(){
