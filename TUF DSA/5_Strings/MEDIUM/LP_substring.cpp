@@ -2,18 +2,27 @@
 using namespace std;
 
 /*      LC = 5
-    
+    Given a string s, return the longest palindromic substring in s.
+*/
+
+/*
+    The idea is :-
+        We start expanding from the window from both sides from every index, and see which gives the maxLen,
+        and palindrome doesnt alone mean odd len like "aba / babab", they can be of even length too, so we have to check for even length also
+         like "abaaba / abba" etc.
 */
 
 class Solution {
 public:
     void expand(int left, int right, string& s, int& start, int& maxLen){
         while(left >= 0 && right < s.size() && s[left] == s[right]){
-            int len = right-left+1;
+            int len = right-left+1;     // window length.
+
             if(len > maxLen){
                 start = left;
                 maxLen = len;
             }
+
             left--, right++;
         }
     }
@@ -24,7 +33,10 @@ public:
         int start = 0, maxLen = 0;
 
         for(int center = 0; center < n ; center++){
+            // for odd length palindromes.... eg :- "aba".
             expand(center, center, s, start, maxLen);
+
+            // for even length palindromes....eg :- "abba".
             expand(center, center+1, s, start, maxLen);
         }
 
