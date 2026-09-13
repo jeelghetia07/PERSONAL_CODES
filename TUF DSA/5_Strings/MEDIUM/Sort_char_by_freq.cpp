@@ -28,7 +28,7 @@ public:
             char ch = p.second;
             pq.pop();
 
-            res += string(freq, ch);
+            res += string(freq, ch);        // this means suppose string(5, 'a)....this will push "aaaaa" in the res.
         }
 
         return res;

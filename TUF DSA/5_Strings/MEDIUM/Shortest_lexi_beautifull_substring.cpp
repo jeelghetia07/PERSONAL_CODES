@@ -72,14 +72,14 @@ int main(){
         Input: s = "100011001", k = 3
         Output: "11001"
         Explanation: There are 7 beautiful substrings in this example:
-        1. The substring "100011001".
-        2. The substring "100011001".
-        3. The substring "100011001".
-        4. The substring "100011001".
-        5. The substring "100011001".
-        6. The substring "100011001".
-        7. The substring "100011001".
-        The length of the shortest beautiful substring is 5.
+        1. The substring "100011".
+        2. The substring "1000110".
+        3. The substring "10001100".
+        4. The substring "00011001".
+        5. The substring "0011001".
+        6. The substring "011001".
+        7. The substring "11001".
+        The length of the shortest beautiful substring is 5 which is string no. 7.
         The lexicographically smallest beautiful substring with length 5 is the substring "11001".
 
                 Example 2:
