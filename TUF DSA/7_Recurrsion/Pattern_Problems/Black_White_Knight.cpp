@@ -5,6 +5,8 @@ using namespace std;
     Given the chessboard dimensions. Find out the number of ways we can place a black and a white Knight on this chessboard such that they cannot attack each other.
 */
 
+// The que says that, for each cell i place a black knight, then how many safe places are there to keep the white knight, by that, we can find the attacking positions of the black knight, and subtract them from the total we get the safe places, and the +1 represents the cell where the black knight is standing.
+
 using ll = long long;
 const long long MOD = 1e9 + 7;
 
