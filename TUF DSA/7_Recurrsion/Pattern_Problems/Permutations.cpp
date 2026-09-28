@@ -35,6 +35,12 @@ public:
     }
 };
 
+/*  The TC = O(n! * n*log(n!)) = O(n! * n2 * log(n)).
+        here, n! is for generating all possiblities, n is comparing 2 arrays WC scenario in the set, log(n!)  for that WC all vector in set will be diff.
+
+    SC = O(n * n!). cause n for vector ds, and n! for all the combination stored inside the set.
+*/
+
 int main(){
     vector<int> nums = {1,2,3};
     // Output: [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
